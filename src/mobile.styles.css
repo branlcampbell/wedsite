@@ -1,0 +1,10 @@
+@media (max-width: 375px) {
+  .inner-content {
+    width: 100%;
+  }
+
+  li {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+}

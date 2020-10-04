@@ -1,0 +1,46 @@
+<div class="inner-content top-fill">
+  <h2>RSVP</h2>
+  <form [formGroup]="form" (submit)="onSubmit()">
+    <div>
+      <input type="text" id="rsvp-input" formControlName="rsvp-code" placeholder="RSVP Code">
+    </div>
+    <!--<span *ngIf="form.get('title').invalid">Please enter a post title.</span>-->
+    <div id="rsvp-form-field">
+      <div id="content-left">
+        <div class="form-option">
+          <input type="radio" id="attending" name="attendance" value="true">
+          <label for="attending">Attending</label>
+        </div>
+        <div class="form-option">
+          <input type="radio" id="not-attending" name="attendance" value="false">
+          <label for="not-attending">Not Attending</label>
+        </div>
+      </div>
+    </div>
+      <label for="entrees">Please choose your entree: </label>
+      <select name="entrees" id="entrees">
+        <option value="Steak">Steak</option>
+        <option value="Chicken">Chicken</option>
+        <option value="Fish">Fish</option>
+        <option value="Vegetarian">Vegetarian</option>
+      </select>
+      <div class="form-option">
+        <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne">
+        <label for="plus-one-confirm">I am bringing a +1</label>
+      </div>
+      <div id="plus-one-form-section">
+        <label for="plus-one-name">+1's Name:</label>
+        <input type="text" formControlName="plus-one-name" placeholder="Name of +1">
+        <div>
+          <label for="plus-one-entrees">Please choose your +1's entree:</label>
+          <select name="plus-one-entrees" id="entrees">
+            <option value="Steak">Steak</option>
+            <option value="Chicken">Chicken</option>
+            <option value="Fish">Fish</option>
+            <option value="Vegetarian">Vegetarian</option>
+          </select>
+        </div>
+      </div>
+      <input class="submit-button" type="submit" value="Submit">
+  </form>
+</div>

@@ -1,0 +1,30 @@
+#header-container {
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #3e5368;
+}
+
+.margin-top-trim {
+  margin-top: -20px;
+}
+
+h1 {
+  font-family: 'gameOfThrones';
+  letter-spacing: 2px;
+  font-size: 60px;
+  margin: 0;
+  color: #f5f5f5;
+  -webkit-text-stroke: 1.5px black; /* width and color */
+}
+
+span {
+  font-family: Georgia, Helvetica;
+  font-size: 20px;
+  color: #f5f5f5;
+}
+
+hr {
+  width: 50%;
+  color: rgb(198, 202, 202, 0.5);
+}

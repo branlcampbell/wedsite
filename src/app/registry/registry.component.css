@@ -1,0 +1,15 @@
+input {
+  text-align: center;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 5px 5px 5px #3e5368;
+  font-size: 20px;
+  color: white;
+  border-color: #3e5368;
+  border-radius: 5px;
+}
+
+#registry-links {
+  text-align: center;
+}
