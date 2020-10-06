@@ -9,6 +9,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class RsvpComponent implements OnInit {
 
   form: FormGroup;
+  selectedButton: HTMLElement;
+  isChecked: boolean;
 
   constructor() { }
 
@@ -21,4 +23,11 @@ export class RsvpComponent implements OnInit {
   }
 
   onSubmit() {}
+
+  onClick() {
+  }
+
+  onCheckboxClick() {
+    this.isChecked = (document.getElementById('plus-one-confirm') as HTMLInputElement).checked;
+  }
 }
