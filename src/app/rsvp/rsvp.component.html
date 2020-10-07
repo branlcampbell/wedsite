@@ -2,10 +2,9 @@
   <h2>RSVP</h2>
   <form [formGroup]="form" (submit)="onSubmit()">
     <div>
-      <input type="text" id="rsvp-input" formControlName="rsvp-code" placeholder="RSVP Code">
+      <input type="text" id="rsvp-input" formControlName="rsvpCode" placeholder="RSVP Code">
+      <span class="error-message" *ngIf="form.get('rsvpCode').invalid">Please enter an RSVP code.</span>
     </div>
-    <!--<span *ngIf="form.get('title').invalid">Please enter a post title.</span>-->
-
       <div class="horizontal-select-container">
         <div class="horizontal-select" id="attending-button">Attending</div>
         <div class="horizontal-select" id="not-attending-button">Not Attending</div>

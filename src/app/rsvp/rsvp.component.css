@@ -7,6 +7,10 @@
   display: inline-block !important;
 }
 
+#plus-one-form-section {
+  display: none;
+}
+
 #plus-one-name-input {
   width: 300px;
 }
@@ -38,6 +42,15 @@
   border: 1px solid #3e5368;
   width: 150px;
   padding: 5px;
+  cursor: pointer;
+}
+
+.visible {
+  display: block !important;
+}
+
+.error-message {
+  display: block;
 }
 
 form {
