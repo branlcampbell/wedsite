@@ -7,12 +7,22 @@
   display: inline-block !important;
 }
 
+#attendance-options {
+  display: none;
+}
+
 #plus-one-form-section {
   display: none;
 }
 
 #plus-one-name-input {
   width: 300px;
+}
+
+.pound-symbol {
+  padding: 5px;
+  font-family: Helvetica;
+  font-weight: bold;
 }
 
 .option-selected {

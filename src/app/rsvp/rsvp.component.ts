@@ -26,7 +26,13 @@ export class RsvpComponent implements OnInit {
 
   onSubmit() {}
 
-  onClick() {
+  onConfirmation() {
+    $('#attendance-options').slideDown('slow');
+  }
+
+  onClick(event) {
+    let target = event.target || event.srcElement || event.currentTarget;
+    console.log(target.attributes.value.value);
   }
 
   onCheckboxClick() {

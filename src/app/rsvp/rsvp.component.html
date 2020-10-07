@@ -2,33 +2,36 @@
   <h2>RSVP</h2>
   <form [formGroup]="form" (submit)="onSubmit()">
     <div>
+      <span class="pound-symbol">#</span>
       <input type="text" id="rsvp-input" formControlName="rsvpCode" placeholder="RSVP Code">
-      <span class="error-message" *ngIf="form.get('rsvpCode').invalid">Please enter an RSVP code.</span>
+      <!-- <span class="error-message" *ngIf="form.get('rsvpCode').invalid">Please enter an RSVP code.</span> -->
     </div>
       <div class="horizontal-select-container">
-        <div class="horizontal-select" id="attending-button">Attending</div>
+        <div class="horizontal-select" id="attending-button" (click)="onConfirmation()">Attending</div>
         <div class="horizontal-select" id="not-attending-button">Not Attending</div>
       </div>
 
-      <label for="entree-select">Please choose your entree </label>
-      <div name="entree-select" class="horizontal-select-container">
-        <div class="horizontal-select" (click)="onClick()">Steak</div>
-        <div class="horizontal-select" (click)="onClick()">Chicken</div>
-        <div class="horizontal-select" (click)="onClick()">Fish</div>
-        <div class="horizontal-select" (click)="onClick()">Vegetarian</div>
+      <div id="attendance-options">
+        <label for="entree-select">Entree of choice</label>
+        <div name="entree-select" class="horizontal-select-container">
+          <div class="horizontal-select" (click)="onClick($event)" value="steak">Steak</div>
+          <div class="horizontal-select" (click)="onClick()">Chicken</div>
+          <div class="horizontal-select" (click)="onClick()">Fish</div>
+          <div class="horizontal-select" (click)="onClick()">Vegetarian</div>
+        </div>
+        <div class="form-option">
+          <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne" (click)="onCheckboxClick()">
+          <label id="checkbox-label" for="plus-one-confirm">I am bringing a +1</label>
+        </div>
       </div>
 
-      <div class="form-option">
-        <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne" (click)="onCheckboxClick()">
-        <label id="checkbox-label" for="plus-one-confirm">I am bringing a +1</label>
-      </div>
       <div id="plus-one-form-section">
         <label for="plus-one-name">Name of +1</label>
         <input id="plus-one-name-input" type="text" formControlName="plus-one-name" placeholder="Name of +1">
 
         <label for="plus-one-entree-select">Please choose your +1's entree </label>
         <div name="plus-one-entree-select" class="horizontal-select-container">
-          <div class="horizontal-select" (click)="onClick()">Steak</div>
+          <div class="horizontal-select" (click)="onClick($event)">Steak</div>
           <div class="horizontal-select" (click)="onClick()">Chicken</div>
           <div class="horizontal-select" (click)="onClick()">Fish</div>
           <div class="horizontal-select" (click)="onClick()">Vegetarian</div>
@@ -36,46 +39,4 @@
       </div>
       <input class="submit-button" type="submit" value="Submit">
     </form>
-
-
-      <!-- <div id="content-left">
-        <div class="form-option">
-          <input type="radio" id="attending" name="attendance" value="true">
-          <label for="attending">Attending</label>
-        </div>
-        <div class="form-option">
-          <input type="radio" id="not-attending" name="attendance" value="false">
-          <label for="not-attending">Not Attending</label>
-        </div>
-      </div>
-
-      <label for="entrees">Please choose your entree </label>
-      <select name="entrees" id="entrees">
-        <option value="Steak">Steak</option>
-        <option value="Chicken">Chicken</option>
-        <option value="Fish">Fish</option>
-        <option value="Vegetarian">Vegetarian</option>
-      </select>
-
-      <div class="form-option">
-        <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne">
-        <label for="plus-one-confirm">I am bringing a +1</label>
-      </div>
-      <div id="plus-one-form-section">
-        <label for="plus-one-name">Name of +1</label>
-        <input type="text" formControlName="plus-one-name" placeholder="Name of +1">
-         <div>
-          <label for="plus-one-entrees">Please choose your +1's entree</label>
-          <select name="plus-one-entrees" id="entrees">
-            <option value="Steak">Steak</option>
-            <option value="Chicken">Chicken</option>
-            <option value="Fish">Fish</option>
-            <option value="Vegetarian">Vegetarian</option>
-          </select>
-        </div>
-      </div>
-      <input class="submit-button" type="submit" value="Submit">
-  </form>-->
-
-
 </div>
