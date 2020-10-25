@@ -12,10 +12,10 @@ export class HomePageComponent implements OnInit {
   private currentDate: Date;
   private counter$: Observable<number>;
   private dateDifference: number;
-  private seconds: number;
-  private minutes: number;
-  private hours: number;
-  private days: number;
+  seconds = 0;
+  minutes = 0;
+  hours = 0;
+  days = 0;
 
   private secondsConv = 1000;
   private minutesConv = this.secondsConv * 60;
@@ -33,27 +33,43 @@ export class HomePageComponent implements OnInit {
   calculateRemainingTime() {
     this.currentDate = new Date();
     this.dateDifference = Math.abs(this.targetDate.getTime() - this.currentDate.getTime());
-    this.days = this.getDays(this.hours);
-    this.hours = this.convertTime(this.daysConv, this.hoursConv);
-    this.minutes = this.convertTime(this.hoursConv, this.minutesConv);
-    this.seconds = this.convertTime(this.minutesConv, this.secondsConv);
+    if (this.dateDifference > 0) {
+      this.days = this.getDays(this.dateDifference);
+      this.hours = this.getHours(this.dateDifference);
+      this.minutes = this.getMinutes(this.dateDifference);
+      this.seconds = this.getSeconds(this.dateDifference);
+    }
   }
 
   /**
-   * Calculates the remaining time unit with regards to remaining time.
-   * Will calculate hours, minutes, and seconds.
-   * @param modulus Value to use in mod operation.
-   * @param divisor Time unit we are converting to.
+   * Calculates remaining days until target date.
+   * @param time - number of ms left before date.
    */
-  convertTime(modulus: number, divisor: number) {
-    return Math.round(Math.floor(this.dateDifference % modulus) / divisor);
+  getDays(time: number) {
+    return Math.floor(time / (1000 * 60 * 60 * 24));
   }
 
   /**
-   * Converts milliseconds to days.
-   * @param ms Number of milliseconds between now and wedding date.
+   * Calculates remaining hours until target date WRT number of days remaining.
+   * @param time - number of ms left before date.
    */
-  getDays(ms: number) {
-    return Math.floor(this.dateDifference / this.daysConv);
+  getHours(time: number) {
+    return Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  }
+
+  /**
+   * Calculates remaining minutes until target date WRT number of days and hours remaining.
+   * @param time - number of ms left before date.
+   */
+  getMinutes(time: number) {
+    return Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+  }
+
+  /**
+   * Calculates remaining seconds until target date WRT number of days, hours, and minutes remaining.
+   * @param time - number of ms left before date.
+   */
+  getSeconds(time: number) {
+    return Math.floor((time % (1000 * 60)) / 1000);
   }
 }
