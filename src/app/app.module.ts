@@ -12,7 +12,7 @@ import { RsvpComponent } from './rsvp/rsvp.component';
 import { RegistryComponent } from './registry/registry.component';
 import { GuestbookComponent } from './guestbook/guestbook.component';
 import { PhotosComponent } from './photos/photos.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

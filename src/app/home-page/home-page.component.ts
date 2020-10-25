@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Observable, Subscription, interval } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -7,23 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomePageComponent implements OnInit {
-  targetDate = new Date('01/14/2022 5:00 PM');
-  currentDate: Date;
-  dateDifference: number;
-  seconds: number;
-  minutes: number;
-  hours: number;
-  days: number;
+  private targetDate = new Date('01/14/2022 5:00 PM');
+  private currentDate: Date;
+  private counter$: Observable<number>;
+  private dateDifference: number;
+  private seconds: number;
+  private minutes: number;
+  private hours: number;
+  private days: number;
 
-  secondsConv = 1000;
-  minutesConv = this.secondsConv * 60;
-  hoursConv = this.minutesConv * 60;
-  daysConv = this.hoursConv * 24;
+  private secondsConv = 1000;
+  private minutesConv = this.secondsConv * 60;
+  private hoursConv = this.minutesConv * 60;
+  private daysConv = this.hoursConv * 24;
 
   constructor() {}
 
   ngOnInit() {
-    this.calculateRemainingTime();
+    interval(1000).subscribe(x => {
+      this.calculateRemainingTime();
+    });
   }
 
   calculateRemainingTime() {

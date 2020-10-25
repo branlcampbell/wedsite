@@ -1,23 +1,39 @@
 <div class="inner-content top-fill">
   <h2>RSVP</h2>
-  <form [formGroup]="form" (submit)="onSubmit()">
+  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div>
       <span class="pound-symbol">#</span>
-      <input type="text" id="rsvp-input" formControlName="rsvpCode" placeholder="RSVP Code">
-      <!-- <span class="error-message" *ngIf="form.get('rsvpCode').invalid">Please enter an RSVP code.</span> -->
+      <input type="text" id="rsvp-code" placeholder="RSVP Code" class="form-control" ngModel name="rsvp-code" required #rsvp="ngModel">
+      <span class="error-message" *ngIf="!rsvp.valid && rsvp.touched">Please enter an RSVP code.</span>
     </div>
       <div class="horizontal-select-container">
         <div class="horizontal-select" id="attending-button" (click)="onConfirmation()">Attending</div>
-        <div class="horizontal-select" id="not-attending-button">Not Attending</div>
+        <div class="horizontal-select" id="not-attending-button" (click)="onDecline()">Not Attending</div>
       </div>
 
-      <div id="attendance-options">
+      <!-- <div *ngFor="let entree of entreeChoices">
+        <input type="radio" class="horizontal-select" name="entree" ngModel [value]="entree">{{ entree }}
+      </div> -->
+
+      <ul>
+        <li>
+          <input class="horizontal-option" type="radio" value="Steak" name="entree" id="entree1">
+          <label class="horizontal-option horizontal-select" for="entree1">Steak</label>
+        </li>
+        <li>
+          <input class="horizontal-option" type="radio" value="Steak" name="entree" id="entree2">
+          <label class="horizontal-option horizontal-select" for="entree2">Chicken</label>
+        </li>
+      </ul>
+
+
+      <div id="attendance-options" ngModelGroup="guestSelections" #guestSelections="ngModelGroup">
         <label for="entree-select">Entree of choice</label>
-        <div name="entree-select" class="horizontal-select-container">
-          <div class="horizontal-select" (click)="onClick($event)" value="steak">Steak</div>
-          <div class="horizontal-select" (click)="onClick()">Chicken</div>
-          <div class="horizontal-select" (click)="onClick()">Fish</div>
-          <div class="horizontal-select" (click)="onClick()">Vegetarian</div>
+        <div id="attendee-entree-options" name="entree-select" class="horizontal-select-container">
+          <div class="horizontal-select" value="steak">Steak</div> <!-- (click)="onClick($event)"-->
+          <div class="horizontal-select" value="chicken">Chicken</div>
+          <div class="horizontal-select" value="fish">Fish</div>
+          <div class="horizontal-select" value="vegetarian">Vegetarian</div>
         </div>
         <div class="form-option">
           <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne" (click)="onCheckboxClick()">
@@ -27,16 +43,16 @@
 
       <div id="plus-one-form-section">
         <label for="plus-one-name">Name of +1</label>
-        <input id="plus-one-name-input" type="text" formControlName="plus-one-name" placeholder="Name of +1">
+        <input id="plus-one-name" type="text" placeholder="Name of +1" class="form-control" ngModel name="plus-one-name">
 
         <label for="plus-one-entree-select">Please choose your +1's entree </label>
         <div name="plus-one-entree-select" class="horizontal-select-container">
-          <div class="horizontal-select" (click)="onClick($event)">Steak</div>
-          <div class="horizontal-select" (click)="onClick()">Chicken</div>
-          <div class="horizontal-select" (click)="onClick()">Fish</div>
-          <div class="horizontal-select" (click)="onClick()">Vegetarian</div>
+          <div class="horizontal-select" value="steak">Steak</div>
+          <div class="horizontal-select" value="chicken">Chicken</div>
+          <div class="horizontal-select" value="fish">Fish</div>
+          <div class="horizontal-select" value="vegetarian">Vegetarian</div>
         </div>
       </div>
-      <input class="submit-button" type="submit" value="Submit">
+      <input class="submit-button" type="submit" value="Submit" [disabled]="!f.valid">
     </form>
 </div>

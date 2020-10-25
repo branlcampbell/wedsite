@@ -8,6 +8,7 @@ input {
   color: white;
   border-color: #3e5368;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 #registry-links {
