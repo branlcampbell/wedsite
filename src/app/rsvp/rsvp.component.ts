@@ -35,7 +35,7 @@ export class RsvpComponent implements OnInit {
       rsvpCode: new FormControl(null, { validators: [Validators.required] }),
     });
 
-    this.clickedButton = document.getElementById('attending-button');
+    this.clickedButton = document.getElementById('attendance-confirm');
     this.onClickObservable = fromEvent(this.clickedButton, 'click');
     this.subscription = this.onClickObservable.subscribe(event => {
       console.log(event);
@@ -73,15 +73,5 @@ export class RsvpComponent implements OnInit {
       this.isAttending = false;
       $('#plus-one-form-section').slideUp('slow');
     }
-  }
-
-  onOptionClick() {
-
-  }
-
-  subscribeChildElements(parentEl: HTMLElement) {
-    parentEl.childNodes.forEach(element => {
-
-    });
   }
 }

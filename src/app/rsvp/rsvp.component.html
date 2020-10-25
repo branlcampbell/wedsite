@@ -6,53 +6,73 @@
       <input type="text" id="rsvp-code" placeholder="RSVP Code" class="form-control" ngModel name="rsvp-code" required #rsvp="ngModel">
       <span class="error-message" *ngIf="!rsvp.valid && rsvp.touched">Please enter an RSVP code.</span>
     </div>
-      <div class="horizontal-select-container">
-        <div class="horizontal-select" id="attending-button" (click)="onConfirmation()">Attending</div>
-        <div class="horizontal-select" id="not-attending-button" (click)="onDecline()">Not Attending</div>
-      </div>
-
-      <!-- <div *ngFor="let entree of entreeChoices">
-        <input type="radio" class="horizontal-select" name="entree" ngModel [value]="entree">{{ entree }}
-      </div> -->
-
+    <div>
       <ul>
         <li>
-          <input class="horizontal-option" type="radio" value="Steak" name="entree" id="entree1">
-          <label class="horizontal-option horizontal-select" for="entree1">Steak</label>
+          <input class="horizontal-option" type="radio" value="Attending" name="attendance" id="attendance-confirm">
+          <label class="horizontal-option horizontal-select" for="attendance-confirm" (click)="onConfirmation()">Attending</label>
         </li>
         <li>
-          <input class="horizontal-option" type="radio" value="Steak" name="entree" id="entree2">
-          <label class="horizontal-option horizontal-select" for="entree2">Chicken</label>
+          <input class="horizontal-option" type="radio" value="Not Attending" name="attendance" id="attendance-decline">
+          <label class="horizontal-option horizontal-select" for="attendance-decline" (click)="onDecline()">Not Attending</label>
         </li>
       </ul>
-
-
-      <div id="attendance-options" ngModelGroup="guestSelections" #guestSelections="ngModelGroup">
-        <label for="entree-select">Entree of choice</label>
-        <div id="attendee-entree-options" name="entree-select" class="horizontal-select-container">
-          <div class="horizontal-select" value="steak">Steak</div> <!-- (click)="onClick($event)"-->
-          <div class="horizontal-select" value="chicken">Chicken</div>
-          <div class="horizontal-select" value="fish">Fish</div>
-          <div class="horizontal-select" value="vegetarian">Vegetarian</div>
-        </div>
-        <div class="form-option">
-          <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne" (click)="onCheckboxClick()">
-          <label id="checkbox-label" for="plus-one-confirm">I am bringing a +1</label>
-        </div>
+    </div>
+    <div id="attendance-options">
+      <div class="guest-entree-selection-container">
+        <label for="entree-selection-container">Entree of choice</label>
+        <ul>
+          <li>
+            <input class="horizontal-option" type="radio" value="Steak" name="entree" id="guest-entree-steak">
+            <label class="horizontal-option horizontal-select" for="guest-entree-steak">Steak</label>
+          </li>
+          <li>
+            <input class="horizontal-option" type="radio" value="Chicken" name="entree" id="guest-entree-chicken">
+            <label class="horizontal-option horizontal-select" for="guest-entree-chicken">Chicken</label>
+          </li>
+          <li>
+            <input class="horizontal-option" type="radio" value="Fish" name="entree" id="guest-entree-fish">
+            <label class="horizontal-option horizontal-select" for="guest-entree-fish">Fish</label>
+          </li>
+          <li>
+            <input class="horizontal-option" type="radio" value="Vegetarian" name="entree" id="guest-entree-vegetarian">
+            <label class="horizontal-option horizontal-select" for="guest-entree-vegetarian">Vegetarian</label>
+          </li>
+        </ul>
+      </div>
+      <div class="form-option">
+        <input type="checkbox" id="plus-one-confirm" name="plus-one-confirm" value="isBringingPlusOne" (click)="onCheckboxClick()">
+        <label id="checkbox-label" for="plus-one-confirm">I am bringing a plus one</label>
       </div>
 
       <div id="plus-one-form-section">
-        <label for="plus-one-name">Name of +1</label>
-        <input id="plus-one-name" type="text" placeholder="Name of +1" class="form-control" ngModel name="plus-one-name">
-
-        <label for="plus-one-entree-select">Please choose your +1's entree </label>
-        <div name="plus-one-entree-select" class="horizontal-select-container">
-          <div class="horizontal-select" value="steak">Steak</div>
-          <div class="horizontal-select" value="chicken">Chicken</div>
-          <div class="horizontal-select" value="fish">Fish</div>
-          <div class="horizontal-select" value="vegetarian">Vegetarian</div>
-        </div>
+        <label for="plus-one-name">Name of plus one</label>
+        <input id="plus-one-name" type="text" placeholder="Name" class="form-control" ngModel name="plus-one-name">
+        <label for="plus-one-form-section">Plus one entree of choice</label>
+        <ul>
+          <li>
+            <input class="horizontal-option" type="radio" value="Steak" name="plus-one-entree" id="plus-one-entree-steak">
+            <label class="horizontal-option horizontal-select" for="plus-one-entree-steak">Steak</label>
+          </li>
+          <li>
+            <input class="horizontal-option" type="radio" value="Chicken" name="plus-one-entree" id="plus-one-entree-chicken">
+            <label class="horizontal-option horizontal-select" for="plus-one-entree-chicken">Chicken</label>
+          </li>
+          <li>
+            <input class="horizontal-option" type="radio" value="Fish" name="plus-one-entree" id="plus-one-entree-fish">
+            <label class="horizontal-option horizontal-select" for="plus-one-entree-fish">Fish</label>
+          </li>
+          <li>
+            <input class="horizontal-option" type="radio" value="Vegetarian" name="plus-one-entree" id="plus-one-entree-vegetarian">
+            <label class="horizontal-option horizontal-select" for="plus-one-entree-vegetarian">Vegetarian</label>
+          </li>
+        </ul>
       </div>
+    </div>
+
+
+
+
       <input class="submit-button" type="submit" value="Submit" [disabled]="!f.valid">
     </form>
 </div>
