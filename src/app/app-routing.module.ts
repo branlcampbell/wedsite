@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'story', component: StoryComponent },
   { path: 'rsvp', component: RsvpComponent },
   { path: 'registry', component: RegistryComponent },
-  { path: 'guestbook', component: WishingWellComponent },
+  { path: 'wishingwell', component: WishingWellComponent },
   { path: 'photos', component: PhotosComponent }
 ];
 

@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Data } from '@angular/router';
 import { Observable, Subscription, interval } from 'rxjs';
+import $ from 'jquery';
+
 
 @Component({
   selector: 'app-home-page',
@@ -22,12 +25,18 @@ export class HomePageComponent implements OnInit {
   private hoursConv = this.minutesConv * 60;
   private daysConv = this.hoursConv * 24;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
+    this.calculateRemainingTime();
     interval(1000).subscribe(x => {
       this.calculateRemainingTime();
     });
+
+  }
+
+  ngOnDestroy() {
   }
 
   calculateRemainingTime() {

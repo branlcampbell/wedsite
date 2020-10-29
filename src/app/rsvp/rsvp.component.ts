@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
 import { FormsModule, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import $ from 'jquery';
 import { Observable, Subscription, Subject, fromEvent } from 'rxjs';
@@ -25,7 +25,8 @@ export class RsvpComponent implements OnInit {
 
   entreeChoices = ['Steak', 'Chicken', 'Fish', 'Vegetarian'];
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -41,9 +42,12 @@ export class RsvpComponent implements OnInit {
       console.log(event);
     });
 
-
     this.entreeSubject = new Subject<string>();
 
+
+  }
+
+  ngOnDestroy() {
   }
 
   onSubmit(form: NgForm) {}
