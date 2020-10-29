@@ -35,25 +35,35 @@ export class NavbarComponent implements OnInit, OnDestroy {
   showOrHideImage(route: string) {
     switch(route) {
       case '/':
-        $('.page-image').slideDown('slow');
+        this.showImage();
         break;
       case '/story':
-        $('.page-image').slideDown('slow');
+        this.showImage();
         break;
       case '/rsvp':
-        $('.page-image').slideUp('slow');
+        this.hideImage();
         break;
       case '/registry':
-        $('.page-image').slideUp('slow');
+        this.hideImage();
         break;
       case '/wishingwell':
-        $('.page-image').slideUp('slow');
+        this.hideImage();
         break;
       case '/photos':
-        $('.page-image').slideUp('slow');
+        this.hideImage();
         break;
       default:
-        $('.page-image').slideUp('slow');
+        this.hideImage();
     }
+  }
+
+  showImage() {
+    $('.page-image').fadeIn('slow');
+    $('#header-image').slideDown(1000);
+  }
+
+  hideImage() {
+    $('.page-image').fadeOut('slow');
+    $('#header-image').slideUp(1000);
   }
 }
