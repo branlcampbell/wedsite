@@ -1,7 +1,6 @@
-import { Component, OnInit, OnDestroy, OnChanges } from '@angular/core';
-import { FormsModule, FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators, NgForm } from '@angular/forms';
 import $ from 'jquery';
-import { Observable, Subscription, Subject, fromEvent } from 'rxjs';
 
 @Component({
   selector: 'app-rsvp',
@@ -11,19 +10,8 @@ import { Observable, Subscription, Subject, fromEvent } from 'rxjs';
 export class RsvpComponent implements OnInit {
 
   private form: FormGroup;
-  private selectedButton: HTMLElement;
   private isChecked: boolean;
-
   private isAttending: boolean;
-
-  private entreeSubject: Subject<string>;
-  private entree: string;
-
-  private onClickObservable: Observable<Event>;
-  private clickedButton: HTMLElement;
-  private subscription: Subscription;
-
-  entreeChoices = ['Steak', 'Chicken', 'Fish', 'Vegetarian'];
 
   constructor() {
    }
@@ -35,39 +23,23 @@ export class RsvpComponent implements OnInit {
       }),
       rsvpCode: new FormControl(null, { validators: [Validators.required] }),
     });
-
-    this.clickedButton = document.getElementById('attendance-confirm');
-    this.onClickObservable = fromEvent(this.clickedButton, 'click');
-    this.subscription = this.onClickObservable.subscribe(event => {
-      console.log(event);
-    });
-
-    this.entreeSubject = new Subject<string>();
-
-
   }
 
-  ngOnDestroy() {
-  }
+  onSubmit(form: NgForm) { }
 
-  onSubmit(form: NgForm) {}
-
+  // Displays hidden RSVP options when user clicks 'Attending'
   onConfirmation() {
     this.isAttending = true;
     $('#attendance-options').slideDown('slow');
   }
 
+  // Hides all RSVP options when user clicks 'Not Attending'
   onDecline() {
     this.isAttending = false;
     $('#attendance-options').slideUp('slow');
   }
 
-  onClick(event) {
-    let target = event.target || event.srcElement || event.currentTarget;
-    this.entreeSubject.next(target.value);
-    console.log(this.entreeSubject);
-  }
-
+  // Displays or hides plus one form section based on checkbox click.
   onCheckboxClick() {
     this.isChecked = (document.getElementById('plus-one-confirm') as HTMLInputElement).checked;
     if (this.isChecked) {

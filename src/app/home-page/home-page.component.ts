@@ -1,8 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Data } from '@angular/router';
-import { Observable, Subscription, interval } from 'rxjs';
-import $ from 'jquery';
-
+import { Component, OnInit } from '@angular/core';
+import { Observable, interval } from 'rxjs';
 
 @Component({
   selector: 'app-home-page',
@@ -13,32 +10,25 @@ import $ from 'jquery';
 export class HomePageComponent implements OnInit {
   private targetDate = new Date('01/14/2022 5:00 PM');
   private currentDate: Date;
-  private counter$: Observable<number>;
   private dateDifference: number;
-  seconds = 0;
-  minutes = 0;
-  hours = 0;
-  days = 0;
+  private seconds = 0;
+  private minutes = 0;
+  private hours = 0;
+  private days = 0;
 
-  private secondsConv = 1000;
-  private minutesConv = this.secondsConv * 60;
-  private hoursConv = this.minutesConv * 60;
-  private daysConv = this.hoursConv * 24;
-
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
     this.calculateRemainingTime();
     interval(1000).subscribe(x => {
       this.calculateRemainingTime();
     });
-
   }
 
-  ngOnDestroy() {
-  }
-
+  /**
+   * Calculates the amount of time remaining (in days, hours, minutes, and seconds)
+   * before our wedding date.
+   */
   calculateRemainingTime() {
     this.currentDate = new Date();
     this.dateDifference = Math.abs(this.targetDate.getTime() - this.currentDate.getTime());

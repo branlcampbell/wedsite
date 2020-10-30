@@ -57,11 +57,13 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
   }
 
+  // Helper method for showing header image.
   showImage() {
     $('.page-image').fadeIn('slow');
     $('#header-image').slideDown(1000);
   }
 
+  // Helper method for hiding header image.
   hideImage() {
     $('.page-image').fadeOut('slow');
     $('#header-image').slideUp(1000);
