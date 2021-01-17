@@ -1,6 +1,17 @@
-@font-face {
+ @font-face {
   font-family: gameOfThrones;
   src: url('/assets/fonts/got_font.ttf');
+}
+/*
+@media (min-width: 2400px) {
+  .inner-content, .paragraph-container {
+    width: 30% !important;
+  }
+
+  .banner-container {
+    background-size: 1000px auto !important;
+    min-height: 1000px !important;
+  }
 }
 
 .submit-button {
@@ -9,6 +20,7 @@
   font-size: 15px;
   font-family: Georgia, Helvetica;
   color: white;
+  margin-top: 10px;
   margin-bottom: 10px;
   border-color: #3e5368;
   border-radius: 5px;
@@ -34,7 +46,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 65%;
+  width: 35%;
   background-color: #c6caca;
   border-left: 1px solid gray;
   border-right: 1px solid gray;
@@ -57,13 +69,13 @@
   height: 75px;
 }
 
-.parchment-scroll-container {
-  background-image: url("/assets/images/parchment-scroll.png");
+.banner-container {
+  background-image: url("/assets/images/banner.png");
   background-size: 850px auto;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center top;
   margin-top: -15px;
-  min-height: 850px;
+  min-height: 1150px;
 }
 
 body {
@@ -102,4 +114,67 @@ a:visited {
 
 router-outlet {
   margin-top: -20px;
+} */
+
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.rosewood {
+  background-color: #5D030F;
+}
+
+.silver-sand {
+  background-color: #C6CACA;
+}
+
+.charcoal {
+  background-color: #3e5368;
+}
+
+.cultured {
+  background-color: #f5f5f5
+}
+
+.banner-container {
+  background-image: url("/assets/images/banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: -35px;
+  min-height: 750px;
+}
+
+.banner-content {
+  padding-top: 65px;
+}
+
+router-outlet {
+  display: none;
+}
+
+h2 {
+  font-family: 'gameOfThrones', Georgia, Helvetica;
+  letter-spacing: 1px;
+  padding: 20px;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.paragraph-container {
+  margin: 0 auto;
+  padding: 0px 35px 0px 35px;
+  font-size: 21px;
+  text-align: center;
+}
+
+#header-image {
+  text-align: center;
+}
+
+.page-image {
+  width: 350px;
 }

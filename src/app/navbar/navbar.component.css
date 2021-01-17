@@ -5,6 +5,7 @@ ul {
   margin-top: 0;
   margin-bottom: 0;
   background-color: #5d030f;
+  border-bottom: 1px solid #3e5368;
 }
 
 li {
@@ -24,3 +25,5 @@ a:hover {
   text-decoration: underline;
   text-decoration-color: #5d030f;
 }
+
+

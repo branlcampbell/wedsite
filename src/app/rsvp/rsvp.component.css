@@ -53,6 +53,8 @@
   width: 150px;
   padding: 5px;
   cursor: pointer;
+  background-color: #C6CACA;
+  opacity: 70%;
 }
 
 .visible {
@@ -85,8 +87,6 @@ input {
   margin-bottom: 10px;
 }
 
-
-
 ul {
   list-style: none;
   padding: 0;
@@ -108,4 +108,13 @@ label.horizontal-option {
 input:checked + label.horizontal-option {
   background-color: #5D030F;
   color: #f5f5f5;
+  opacity: 100%;
+}
+
+input:hover + label.horizontal-option {
+  opacity: 100%;
+}
+
+h2 {
+  margin: 0;
 }

@@ -1,0 +1,6 @@
+@media (min-width: 768) {
+    .banner-container {
+      min-height: 1250;
+      margin-top: -50px;
+    }
+  }

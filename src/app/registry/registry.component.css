@@ -3,12 +3,12 @@ input {
   margin: 10px;
   padding: 20px;
   width: 250px;
-  box-shadow: 5px 5px 5px #3e5368;
+  box-shadow: 5px 5px 5px #5D030F;
   font-size: 20px;
   color: white;
-  border-color: #3e5368;
-  border-radius: 5px;
+  border-color: #C6CACA;
   cursor: pointer;
+  height: 70px;
 }
 
 #registry-links {

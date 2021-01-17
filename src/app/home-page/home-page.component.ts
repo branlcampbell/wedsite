@@ -11,10 +11,10 @@ export class HomePageComponent implements OnInit {
   private targetDate = new Date('01/14/2022 5:00 PM');
   private currentDate: Date;
   private dateDifference: number;
-  private seconds = 0;
-  private minutes = 0;
-  private hours = 0;
-  private days = 0;
+  seconds = 0;
+  minutes = 0;
+  hours = 0;
+  days = 0;
 
   constructor() { }
 

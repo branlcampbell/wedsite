@@ -1,4 +1,4 @@
-@media (max-width: 375px) {
+/* @media (max-width: 375px) {
   .inner-content {
     width: 100%;
   }
@@ -6,5 +6,12 @@
   li {
     margin-left: 10px !important;
     margin-right: 10px !important;
+  }
+} */
+
+@media (min-width: 550px) {
+  .banner-container {
+    min-height: 990px;
+    margin-top: -40px;
   }
 }
