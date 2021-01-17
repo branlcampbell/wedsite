@@ -12,6 +12,7 @@ import $ from 'jquery';
 export class NavbarComponent implements OnInit, OnDestroy {
 
   private sub: Subscription;
+  private isExpanded: boolean;
 
   constructor(private route: Router) {
    }
@@ -22,6 +23,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.showOrHideImage(event.url);
       }
     });
+    this.isExpanded = false;
   }
 
   ngOnDestroy() {
@@ -67,5 +69,18 @@ export class NavbarComponent implements OnInit, OnDestroy {
   hideImage() {
     $('.page-image').fadeOut('slow');
     $('#header-image').slideUp(1000);
+  }
+
+  expandOptions() {
+    if (this.isExpanded) {
+      $("#link-group").fadeOut('slow');
+      $("#link-group").slideUp(2000);
+      this.isExpanded = false;
+    } else {
+      $("#link-group").fadeIn('slow');
+      $("#link-group").slideDown(2000);
+      this.isExpanded = true;
+    }
+
   }
 }

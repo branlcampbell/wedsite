@@ -8,12 +8,34 @@ ul {
   border-bottom: 1px solid #3e5368;
 }
 
+
+
 li {
   display: inline;
-  margin-left: 15px;
-  margin-right: 15px;
   font-family: Georgia, Helvetica;
   font-size: 18px;
+  padding: 10px;
+}
+
+#expand-button {
+  min-height: 40px;
+}
+
+#expand-button a {
+  background-image: url("/assets/images/menu.svg");
+  background-color: #3e5368;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20px;
+  width: 30px;
+  padding: 10px;
+  float: right;
+  border-radius: 3px;
+}
+
+.expand-link {
+  border-top: 1px solid #3e5368;
 }
 
 a {
@@ -26,4 +48,17 @@ a:hover {
   text-decoration-color: #5d030f;
 }
 
+#link-group {
+  display: inline;
+}
 
+@media (max-width: 619px) {
+
+  #link-group {
+    display: none;
+  }
+
+  li {
+    display: block;
+  }
+}

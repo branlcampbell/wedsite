@@ -1,20 +1,25 @@
 <ul class="inner-content">
-  <li>
-    <a mat-button routerLink="/">Home</a>
+  <li id="expand-button">
+    <a mat-button (click)="expandOptions()"></a>
   </li>
-  <li>
-    <a mat-button routerLink="/story">Our Story</a>
-  </li>
-  <li>
-    <a mat-button routerLink="/rsvp">RSVP</a>
-  </li>
-  <li>
-    <a mat-button routerLink="/registry">Registry</a>
-  </li>
-  <li>
-    <a mat-button routerLink="/wishingwell">Wishing Well</a>
-  </li>
-  <li>
-    <a mat-button routerLink="/photos">Photos</a>
-  </li>
+  <div id="link-group">
+    <li class="expand-link expand-link--hidden">
+      <a mat-button routerLink="/">Home</a>
+    </li>
+    <li class="expand-link expand-link--hidden">
+      <a mat-button routerLink="/story">Our Story</a>
+    </li>
+    <li class="expand-link expand-link--hidden">
+      <a mat-button routerLink="/rsvp">RSVP</a>
+    </li>
+    <li class="expand-link expand-link--hidden">
+      <a mat-button routerLink="/registry">Registry</a>
+    </li>
+    <li class="expand-link expand-link--hidden">
+      <a mat-button routerLink="/wishingwell">Wishing Well</a>
+    </li>
+    <li class="expand-link expand-link--hidden">
+      <a mat-button routerLink="/photos">Photos</a>
+    </li>
+  </div>
 </ul>

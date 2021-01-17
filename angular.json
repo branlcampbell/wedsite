@@ -25,7 +25,6 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/mobile.styles.css",
               "src/tablet.styles.css"
             ],
             "scripts": []
