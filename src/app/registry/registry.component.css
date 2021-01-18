@@ -14,3 +14,12 @@ input {
 #registry-links {
   text-align: center;
 }
+
+@media (min-width: 768px) {
+  input {
+    margin: 30px;
+    padding: 40px;
+    width: 350px;
+    height: 100px;
+  }
+}

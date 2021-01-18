@@ -48,6 +48,7 @@
 @media (min-width: 760px) {
   #countdown-parent-container {
     width: 70%;
+    padding-top: 10%;
   }
 
   .countdown-text {

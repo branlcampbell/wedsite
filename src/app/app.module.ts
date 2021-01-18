@@ -13,6 +13,7 @@ import { RegistryComponent } from './registry/registry.component';
 import { WishingWellComponent } from './wishing-well/wishing-well.component';
 import { PhotosComponent } from './photos/photos.component';
 import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     RsvpComponent,
     RegistryComponent,
     WishingWellComponent,
-    PhotosComponent
+    PhotosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
