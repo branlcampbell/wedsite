@@ -145,11 +145,11 @@ input:hover + label.horizontal-option {
   }
 
   .attendance-input {
-    min-width: 225px;
+    min-width: 190px;
   }
 
   .entree-option {
-    min-width: 118px;
+    min-width: 90px;
   }
 
   input {
@@ -165,10 +165,10 @@ input:hover + label.horizontal-option {
   }
 
   #plus-one-name {
-    margin: 25px;
+    margin: 5px;
   }
 
   .form-option {
-    padding: 30px;
+    padding: 5px;
   }
 }

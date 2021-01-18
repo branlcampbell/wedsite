@@ -3,10 +3,10 @@ ul {
   padding: 5px 0 5px 0;
   text-align: center;
   margin: 0 auto 0 auto;
-;
   background-color: #5d030f;
   border-bottom: 1px solid #3e5368;
   max-width: 1000px;
+  border: 2px solid black;
 }
 
 
@@ -53,7 +53,7 @@ a:hover {
   display: inline;
 }
 
-@media (max-width: 619px) {
+@media (max-width: 599px) {
 
   #link-group {
     display: none;

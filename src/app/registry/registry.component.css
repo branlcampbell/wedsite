@@ -17,7 +17,7 @@ input {
 
 @media (min-width: 768px) {
   input {
-    margin: 30px;
+    margin: 45px;
     padding: 40px;
     width: 350px;
     height: 100px;
