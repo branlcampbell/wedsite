@@ -73,12 +73,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   expandOptions() {
     if (this.isExpanded) {
-      $("#link-group").fadeOut('slow');
-      $("#link-group").slideUp(2000);
+      $("#link-group").slideUp(1000);
       this.isExpanded = false;
     } else {
-      $("#link-group").fadeIn('slow');
-      $("#link-group").slideDown(2000);
+      $("#link-group").slideDown(1000);
       this.isExpanded = true;
     }
 
