@@ -1,11 +1,11 @@
 <app-header></app-header>
 <main>
-  <div id="header-image" class="inner-content">
+  <div id="header-image">
     <img class="page-image" src="/assets/images/stark.png">
   </div>
   <div class="banner-container">
     <div class="banner-image-container">
-      <div class="banner-content">
+      <div [@contentState]="state" class="banner-content">
         <router-outlet></router-outlet>
 
       </div>

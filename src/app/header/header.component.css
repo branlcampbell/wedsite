@@ -11,7 +11,7 @@
 }
 
 h1 {
-  font-family: 'cursive';
+  font-family: 'cursive', 'labrit';
   letter-spacing: 2px;
   font-size: 50px;
   margin: 0;
@@ -37,7 +37,25 @@ span {
 }
 
 @media (min-width: 768px) {
+  h1 {
+    font-size: 72px;
+  }
+
+  span {
+    font-size: 26px;
+  }
+
   hr {
-    width: 30%;
+    width: 35%;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1 {
+    font-size: 84px;
+  }
+
+  span {
+    font-size: 34px;
   }
 }

@@ -63,3 +63,11 @@ a:hover {
     display: block;
   }
 }
+
+@media (min-width: 1440px) {
+  li {
+    font-size: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
