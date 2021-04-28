@@ -4,13 +4,21 @@ div {
 
 textarea {
   display: block;
-  height: 150px;
-  width: 300px;
+  height: 125px;
+  width: 100%;
   resize: none;
   margin-left: auto;
   margin-right: auto;
+  max-width: 700px;
 }
 
 P {
   margin: 5px;
+}
+
+
+@media (min-width: 768px) {
+  textarea {
+    height: 250px;
+  }
 }

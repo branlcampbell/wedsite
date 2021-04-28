@@ -1,18 +1,19 @@
 input {
   text-align: center;
   margin: 10px;
-  padding: 20px;
-  width: 250px;
+  padding: 10px;
+  width: 220px;
   box-shadow: 5px 5px 5px #5D030F;
   font-size: 20px;
   color: white;
   border-color: #C6CACA;
   cursor: pointer;
-  height: 70px;
+  height: 65px;
 }
 
 #registry-links {
   text-align: center;
+  margin-top: 5%;
 }
 
 @media (min-width: 768px) {

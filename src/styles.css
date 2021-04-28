@@ -13,6 +13,11 @@
   src: url('/assets/fonts/cursive.ttf');
 }
 
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
 body {
   background-color: #f5f5f5;
   background-image: url('/assets/images/scales.png');
