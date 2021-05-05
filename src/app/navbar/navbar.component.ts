@@ -18,11 +18,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
    }
 
   ngOnInit() {
-    this.sub = this.route.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        this.showOrHideImage(event.url);
-      }
-    });
+    // this.sub = this.route.events.subscribe((event: Event) => {
+    //   if (event instanceof NavigationEnd) {
+    //     this.showOrHideImage(event.url);
+    //   }
+    // });
     this.isExpanded = false;
   }
 
