@@ -5,18 +5,14 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   selector: 'app-root',
   templateUrl: './app.component.html',
   animations: [
-    trigger('contentState', [
-      state('normal', style({
-        'opacity': 1
-      })),
-      state('faded', style({
-        'opacity': 0
-      })),
-      transition('normal <=> faded', animate(500))
+    trigger('fade', [
+      state('in', style({ opacity: 1 })),
+      transition(':enter', [ style({ opacity: 0 }), animate(1000) ]),
+      transition(':leave', animate(1000, style({ opacity: 0 })))
     ])
   ]
 })
 export class AppComponent {
   state = 'normal';
-  title = 'frontend';
+  title = 'Wedsite';
 }

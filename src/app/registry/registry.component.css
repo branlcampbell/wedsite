@@ -11,6 +11,21 @@ input {
   height: 65px;
 }
 
+a {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 10px;
+  width: 220px;
+  box-shadow: 5px 5px 5px #5D030F;
+  font-size: 20px;
+  color: white;
+  border-color: #C6CACA;
+  cursor: pointer;
+  height: 65px;
+  text-decoration: none;
+}
+
 #registry-links {
   text-align: center;
   margin-top: 5%;

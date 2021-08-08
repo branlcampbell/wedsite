@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, Params, Router, Event, NavigationEnd } from '@angular/router';
 import $ from 'jquery';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-navbar',
