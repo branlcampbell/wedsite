@@ -16,7 +16,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 })
 
 export class HomePageComponent implements OnInit {
-  private targetDate = new Date('01/14/2022 5:00 PM');
+  private targetDate = new Date('01/14/2022 4:30 PM');
   private currentDate: Date;
   private dateDifference: number;
   seconds = 0;

@@ -1,0 +1,13 @@
+.paragraph-container {
+    max-height: 250px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+@media (min-width: 601px) {
+    .paragraph-container {
+        margin: 0;
+        max-height: 750px;
+    }
+}
+
