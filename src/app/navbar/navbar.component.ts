@@ -55,6 +55,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
       case '/photos':
         this.hideImage();
         break;
+      case '/covid-info':
+        this.hideImage();
+        break;
       default:
         this.hideImage();
     }
