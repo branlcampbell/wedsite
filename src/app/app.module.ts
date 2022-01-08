@@ -13,6 +13,7 @@ import { CovidInfoComponent} from './covid-info/info.component';
 import { RegistryComponent } from './registry/registry.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { GuestSeatingComponent } from './guest-seating/seating.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FooterComponent } from './footer/footer.component';
     StoryComponent,
     CovidInfoComponent,
     RegistryComponent,
+    GuestSeatingComponent,
     FooterComponent
   ],
   imports: [

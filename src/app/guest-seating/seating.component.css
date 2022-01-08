@@ -1,0 +1,18 @@
+#s3-link {
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+}
+
+#guest-seating {
+    text-align: center;
+    width: 90%;  
+}
+
+#instructions {
+    padding: 20px;
+}
+
+@media (min-width: 601px) {
+
+}
